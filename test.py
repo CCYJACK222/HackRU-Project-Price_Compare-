@@ -1,10 +1,22 @@
 import pandas as pd
-import numpy as np
 
-import pandas as pd
-
-# Read the CSV file into a pandas DataFrame
+# Read the CSV file
 df = pd.read_csv('rutgers_university_supermarkets.csv')
 
-# Display the DataFrame
+# Drop the 'Supermarket Address' column
+df = df.drop(['Supermarket Address'], axis=1)
+df = df.drop(['University'], axis=1)
+
+
+# Split the 'Supermarket Coordinates' into two new columns: 'Latitude' and 'Longitude'
+df[['Latitude', 'Longitude']] = df['Supermarket Coordinates'].str.split(',', expand=True)
+
+# Clean up any extra spaces in the columns
+df['Latitude'] = df['Latitude'].str.extract('([0-9.-]+)')[0]
+df['Longitude'] = df['Longitude'].str.extract('([0-9.-]+)')[0]
+
+# Drop the original 'Supermarket Coordinates' column
+df = df.drop(['Supermarket Coordinates'], axis=1)
+
+# Display the updated DataFrame
 print(df)
