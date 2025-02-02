@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zipcode, Filter, and Popular Products</title>
+    <title>Zipcode, Filter, Popular Products, and ID Selection</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             padding: 20px;
         }
+
         .container {
             max-width: 400px;
             margin: 0 auto;
@@ -20,26 +21,32 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        input, button {
+
+        input,
+        button {
             width: 100%;
             padding: 8px;
             margin-top: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             background-color: #007bff;
             color: white;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         ul {
             list-style: none;
             padding: 0;
             margin-top: 20px;
         }
+
         li {
             background: #f8f8f8;
             padding: 10px;
@@ -49,30 +56,37 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .delete-button {
             background-color: red;
         }
+
         .delete-button:hover {
             background-color: darkred;
         }
+
         h1 {
             margin-bottom: 20px;
         }
+
         .message {
             margin-top: 10px;
             color: #333;
         }
+
         .product-list {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
             flex-wrap: wrap;
         }
+
         .product-item {
             text-align: center;
             width: 30%;
             margin-bottom: 20px;
         }
+
         .product-item img {
             width: 100px;
             height: 100px;
@@ -95,31 +109,39 @@
         <p id="message" class="message"></p>
     </div>
 
+    <!-- SELECT ID SECTION -->
+    <div class="container">
+        <h2>Choose an ID:</h2>
+        <button onclick="sendID(1)">Select ID 1</button>
+        <button onclick="sendID(2)">Select ID 2</button>
+        <button onclick="sendID(3)">Select ID 3</button>
+    </div>
+
     <!-- POPULAR PRODUCTS SECTION -->
     <div class="container">
         <h1>Popular Products</h1>
         <div class="product-list">
-            <button class="product-item" onclick="viewProduct('milk')">
+            <button class="product-item" onclick="viewProduct('milk', 1)">
                 <img src="images/milk.webp" alt="Milk">
                 <div>Milk</div>
             </button>
-            <button class="product-item" onclick="viewProduct('bananas')">
+            <button class="product-item" onclick="viewProduct('bananas', 2)">
                 <img src="images/banana.avif" alt="Bananas">
                 <div>Bananas</div>
             </button>
-            <button class="product-item" onclick="viewProduct('avocado')">
+            <button class="product-item" onclick="viewProduct('avocado', 3)">
                 <img src="images/Avocado-fruits.webp" alt="Avocado">
                 <div>Avocado</div>
             </button>
-            <button class="product-item" onclick="viewProduct('chicken breast')">
+            <button class="product-item" onclick="viewProduct('chicken breast', 4)">
                 <img src="images/chicken breast.webp" alt="Chicken Breast">
                 <div>Chicken Breast</div>
             </button>
-            <button class="product-item" onclick="viewProduct('ground beef')">
+            <button class="product-item" onclick="viewProduct('ground beef', 5)">
                 <img src="images/ground beef.jpeg" alt="Ground Beef">
                 <div>Ground Beef</div>
             </button>
-            <button class="product-item" onclick="viewProduct('bread')">
+            <button class="product-item" onclick="viewProduct('bread', 6)">
                 <img src="images/bread.jpg" alt="Bread">
                 <div>Bread</div>
             </button>
@@ -152,6 +174,22 @@
                 messageElement.style.color = "red";
             }
         });
+
+        // ID SELECT SCRIPT
+        function sendID(id) {
+            fetch("/process", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ selectedID: id })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.open();
+                document.write(data);
+                document.close();
+            })
+            .catch(error => console.error("Error:", error));
+        }
 
         // FILTER SCRIPT
         let items = [];
@@ -193,9 +231,9 @@
         });
 
         // PRODUCT BUTTON CLICK HANDLER
-        function viewProduct(productName) {
-            const url = `https://www.yourdatabase.com/product/${productName.toLowerCase()}`;
-            window.location.href = url; // Redirects to the product page
+        function viewProduct(productName, id) {
+            const url = `https://www.yourdatabase.com/product/${productName.toLowerCase()}?id=${id}`;
+            window.location.href = url; // Redirects to the product page with ID parameter
         }
     </script>
 
