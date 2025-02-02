@@ -119,32 +119,32 @@
         <div class="product-list">
             <label class="product-item">
                 <input type="radio" name="product" value="Milk" required>
-                <img src="images/milk.webp" alt="Milk">
+                <img src="{{ url_for('static', filename='images/milk.webp') }}" alt="Milk">
                 <div>Milk</div>
             </label>
             <label class="product-item">
                 <input type="radio" name="product" value="Banana">
-                <img src="images/banana.avif" alt="Bananas">
+                <img src="{{ url_for('static', filename='images/banana.avif') }}" alt="Milk">
                 <div>Bananas</div>
             </label>
             <label class="product-item">
                 <input type="radio" name="product" value="Avocado">
-                <img src="templates/images/Avocado-fruits.webp" alt="Avocado">
+                <img src="{{ url_for('static', filename='images/Avocado-fruits.webp') }}" alt="Milk">
                 <div>Avocado</div>
             </label>
             <label class="product-item">
                 <input type="radio" name="product" value="Chicken Breast">
-                <img src="images/chicken breast.webp" alt="Chicken Breast">
+                <img src="{{ url_for('static', filename='images/chicken breast.webp') }}" alt="Milk">
                 <div>Chicken Breast</div>
             </label>
             <label class="product-item">
                 <input type="radio" name="product" value="Ground Beef">
-                <img src="templates/images/ground beef.jpeg" alt="Ground Beef">
+                <img src="{{ url_for('static', filename='images/ground beef.jpeg') }}" alt="Milk">
                 <div>Ground Beef</div>
             </label>
             <label class="product-item">
                 <input type="radio" name="product" value="Bread">
-                <img src="templates/images/bread.jpg" alt="Bread" />
+                <img src="{{ url_for('static', filename='images/bread.jpg') }}" alt="Milk">
                 <div>Bread</div>
             </label>
         </div>
