@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Cheapest Item</title>
+</head>
+<body>
+    <h2>Enter the Item You Are Looking For:</h2>
+    <input type="text" id="itemInput" placeholder="Enter item name">
+    <button onclick="sendData()">Search</button>
+
+    <script>
+        function sendData() {
+            const itemName = document.getElementById("itemInput").value;
+
+            fetch("/process", {  
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ selectedItem: itemName })  
+            })
+            .then(response => response.text()) 
+            .then(data => {
+                document.open();
+                document.write(data);
+                document.close();
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
