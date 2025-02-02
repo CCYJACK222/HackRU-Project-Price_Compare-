@@ -99,44 +99,44 @@
     <div class="container">
         <h1>Popular Products</h1>
         <div class="product-list">
-            <button class="product-item" onclick="viewProduct('Milk')">
+            <button class="product-item" onclick="viewProduct('milk')">
                 <img src="images/milk.webp" alt="Milk">
                 <div>Milk</div>
             </button>
-            <button class="product-item" onclick="viewProduct('Bananas')">
+            <button class="product-item" onclick="viewProduct('bananas')">
                 <img src="images/banana.avif" alt="Bananas">
                 <div>Bananas</div>
             </button>
-            <button class="product-item" onclick="viewProduct('Avocado')">
+            <button class="product-item" onclick="viewProduct('avocado')">
                 <img src="images/Avocado-fruits.webp" alt="Avocado">
                 <div>Avocado</div>
             </button>
-            <button class="product-item" onclick="viewProduct('Chicken Breast')">
+            <button class="product-item" onclick="viewProduct('chicken breast')">
                 <img src="images/chicken breast.webp" alt="Chicken Breast">
                 <div>Chicken Breast</div>
             </button>
-            <button class="product-item" onclick="viewProduct('Ground Beef')">
+            <button class="product-item" onclick="viewProduct('ground beef')">
                 <img src="images/ground beef.jpeg" alt="Ground Beef">
                 <div>Ground Beef</div>
             </button>
-            <button class="product-item" onclick="viewProduct('Bread')">
+            <button class="product-item" onclick="viewProduct('bread')">
                 <img src="images/bread.jpg" alt="Bread">
                 <div>Bread</div>
             </button>
         </div>
     </div>
 
-     <!-- FIND A PRODUCT SECTION -->
-     <div class="container">
-        <h2>Find A Product</h2>
+    <!-- FILTER SECTION -->
+    <div class="container">
+        <h2>Find a Product</h2>
         <div>
             <input type="text" id="itemInput" placeholder="Enter an item...">
-            <button onclick="addTask()">Search</button>
+            <button onclick="findProduct()">Search</button>
         </div>
 
         <ul id="itemsList"></ul>
     </div>
-    
+
     <script>
         // ZIPCODE FORM SCRIPT
         document.getElementById("zipcodeForm").addEventListener("submit", function(event) {
@@ -156,14 +156,13 @@
         // FILTER SCRIPT
         let items = [];
 
-        function addTask() {
+        function findProduct() {
             const inputField = document.getElementById("itemInput");
-            const newItem = inputField.value.trim().toLowerCase();
+            const productName = inputField.value.trim().toLowerCase();
 
-            if (newItem !== "") {
-                items.push(newItem);
-                inputField.value = ""; // Clear input
-                renderList();
+            if (productName !== "") {
+                const url = `https://www.yourdatabase.com/product/${productName}`;
+                window.location.href = url; // Redirects to the product page
             }
         }
 
@@ -189,14 +188,14 @@
         document.getElementById("itemInput").addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
-                addTask();
+                findProduct();
             }
         });
 
         // PRODUCT BUTTON CLICK HANDLER
         function viewProduct(productName) {
-            alert(`You clicked on ${productName}. This will link to a database.`);
-            // Here, you can implement the functionality to link to a database or redirect to a product page
+            const url = `https://www.yourdatabase.com/product/${productName.toLowerCase()}`;
+            window.location.href = url; // Redirects to the product page
         }
     </script>
 
