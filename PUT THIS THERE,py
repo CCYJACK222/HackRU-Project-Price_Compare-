@@ -1,0 +1,72 @@
+import pandas as pd
+import folium
+import sqlite3
+
+from flask import Flask, request, render_template
+
+stores_df = pd.read_csv("stores.csv")  # Store locations
+items_df = pd.read_csv("product.csv")  # Item prices
+
+
+
+app = Flask(__name__)
+#base index.html
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+
+
+
+# Connect to the database
+conn = sqlite3.connect("database.db")
+"""
+
+"""
+m = folium.Map(location=[40.52335925397462, -74.45878849403549], zoom_start=12)
+
+
+
+"""
+Filter DATABASES HERE 
+"""
+@app.route('/process')
+def process():
+    data = request.json.get("selectedName")  # Get ID from frontend
+    selected_item = data.lower().strip()
+
+    filtered_items = items_df[items_df['item'].str.lower() == selected_item]
+    cheapest_item = filtered_items.sort_values(by='price').iloc[0]
+    cheapest_store_id = cheapest_item['storeID']
+    cheapest_price = cheapest_item['price']
+
+    # Get store details for the cheapest store
+    store_info = stores_df[stores_df['storeID'] == cheapest_store_id]
+    #Coordinates of the store with smallest price 
+    lat = store_info['lat'].values[0]
+    lon = store_info['long'].values[0]
+    store_name = store_info['storeName'].values[0]
+
+
+
+    m = folium.Map(location=[40.523405823773565, -74.45848068999742], zoom_start=12)
+    
+
+    folium.CircleMarker(
+        location=(lat, lon),
+        popup=f"Store: {store_name}<br>{selected_item.capitalize()} - ${cheapest_price}",
+        icon=folium.Icon(color="green"),
+    ).add_to(m)
+    
+    #Mb change
+    map_path = "templates/map.html"
+    m.save(map_path)
+
+    return render_template("map.html")
+
+#dunno wtf iz diz nuts
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
