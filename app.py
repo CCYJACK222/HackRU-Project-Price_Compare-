@@ -56,7 +56,7 @@ Filter DATABASES HERE
 @app.route('/process')
 def process():
     data = request.json.get("selectedName")  # Get ID from frontend
-    itemLookingFor = int(data)  # Convert to integer for query
+    itemLookingFor = data  # Convert to integer for query
     filteredItems = itemDF[itemDF['item'] == itemLookingFor]
     filteredItems = filteredItems.sort_values(by='price', ascending=True) #make it so smallest price 
     cheepestPrice = filteredItems['price'].iat[0]
