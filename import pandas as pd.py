@@ -11,6 +11,12 @@ app = Flask(__name__)
 #base index.html
 @app.route('/')
 def home():
+    return render_template('index.html')
+
+
+
+@app.route("/submit-selection", methods=["POST"])
+def submit_selection():
     # Connect to the database
     conn = sqlite3.connect("database.db")
 
@@ -63,4 +69,7 @@ def home():
     map_path = "templates/map.html"
     m.save(map_path)
     print("Interactive map saved as 'map.html'")
-    
+    return render_template("map.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -99,28 +99,26 @@
 </head>
 
 <body>
-
-    <!-- ZIPCODE SECTION -->
+<!-- COMBINED FORM FOR PRODUCT & ZIPCODE SELECTION -->
 <div class="container">
-    <h2>Enter Your Zipcode</h2>
-    <form id="zipcodeForm" action="/submit-zipcode" method="POST">
+    <h2>Select a Product and Enter Your Zipcode</h2>
+    <form action="/submit-selection" method="POST">
+        <!-- ZIPCODE SELECTION -->
+        <h3>Enter Your Zipcode</h3>
         <label for="zipcode">Select Zipcode:</label>
         <select id="zipcode" name="zipcode" required>
             <option value="8854">8854</option>
             <option value="7102">7102</option>
             <option value="8102">8102</option>
         </select>
-        <button type="submit">Submit</button>
-    </form>
-    <p id="message" class="message"></p>
-</div>
-<!-- POPULAR PRODUCTS SECTION -->
-<div class="container">
-    <h1>Popular Products</h1>
-    <form action="/submit-product" method="POST">
+
+
+
+        <!-- PRODUCT SELECTION -->
+        <h3>Popular Products</h3>
         <div class="product-list">
             <label class="product-item">
-                <input type="radio" name="product" value="1">
+                <input type="radio" name="product" value="1" required>
                 <img src="images/milk.webp" alt="Milk">
                 <div>Milk</div>
             </label>
@@ -150,9 +148,12 @@
                 <div>Bread</div>
             </label>
         </div>
+
+        
         <button type="submit">Submit</button>
     </form>
 </div>
+
 
     <!-- FILTER SECTION -->
     <div class="container">
