@@ -112,30 +112,30 @@
     <div class="container">
         <h1>Popular Products</h1>
         <div class="product-list">
-            <div class="product-item">
+            <button class="product-item" onclick="viewProduct('Milk')">
                 <img src="images/milk.webp" alt="Milk">
                 <div>Milk</div>
-            </div>
-            <div class="product-item">
+            </button>
+            <button class="product-item" onclick="viewProduct('Bananas')">
                 <img src="images/banana.avif" alt="Bananas">
                 <div>Bananas</div>
-            </div>
-            <div class="product-item">
+            </button>
+            <button class="product-item" onclick="viewProduct('Avocado')">
                 <img src="images/Avocado-fruits.webp" alt="Avocado">
                 <div>Avocado</div>
-            </div>
-            <div class="product-item">
+            </button>
+            <button class="product-item" onclick="viewProduct('Chicken Breast')">
                 <img src="images/chicken breast.webp" alt="Chicken Breast">
                 <div>Chicken Breast</div>
-            </div>
-            <div class="product-item">
+            </button>
+            <button class="product-item" onclick="viewProduct('Ground Beef')">
                 <img src="images/ground beef.jpeg" alt="Ground Beef">
                 <div>Ground Beef</div>
-            </div>
-            <div class="product-item">
+            </button>
+            <button class="product-item" onclick="viewProduct('Bread')">
                 <img src="images/bread.jpg" alt="Bread">
                 <div>Bread</div>
-            </div>
+            </button>
         </div>
     </div>
 
@@ -194,6 +194,12 @@
                 addTask();
             }
         });
+
+        // PRODUCT BUTTON CLICK HANDLER
+        function viewProduct(productName) {
+            alert(`You clicked on ${productName}. This will link to a database.`);
+            // Here, you can implement the functionality to link to a database or redirect to a product page
+        }
     </script>
 
 </body>
