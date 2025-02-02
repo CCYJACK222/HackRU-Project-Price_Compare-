@@ -21,6 +21,7 @@ def submit_selection():
     conn = sqlite3.connect("database.db")
     itemLookingFor = request.form.get("product")
     zipcode = request.form.get("zipcode")
+    zipcode = str(zipcode)
     print(f"product ID {itemLookingFor} | zipcode {zipcode}")
     #product_name = PRODUCTS.get(product_id, "Unknown Product")
 
@@ -31,6 +32,8 @@ def submit_selection():
 
     # Load data into a Pandas DataFrame
     storeDF = pd.read_sql_query(storeQuery, conn)
+    # Convert column 'zipcode' to strings
+    storeDF['zipcode'] = storeDF['zipcode'].astype(str)
     itemDF = pd.read_sql_query(itemQuery, conn)
     print(storeDF)
     print(itemQuery)
@@ -43,8 +46,7 @@ def submit_selection():
     """
     Filter DATABASES HERE 
     """
-    print(f"store DF {storeDF}")
-    print(f"item DF {itemDF}")
+    
     filteredItems = itemDF[itemDF['item'] == itemLookingFor]
     #filteredItems = filteredItems.sort_values(by='price', ascending=True) #make it so smallest price 
     #cheepestPrice = filteredItems['price'].iat[0]
@@ -52,6 +54,8 @@ def submit_selection():
     filteredStore = storeDF[storeDF['storeID'].isin(filteredItems['storeID'])]
     filteredStore = filteredStore[filteredStore['zipcode'] == zipcode]
     print(f"filteredStore {filteredStore}")
+    print(f"store DF {filteredStore}")
+    print(f"item DF {filteredItems}")
     for _, row in filteredStore.iterrows():
 
         lat = row['lat']
