@@ -95,19 +95,6 @@
         <p id="message" class="message"></p>
     </div>
 
-    <!-- FILTER SECTION -->
-    <div class="container">
-        <h1>Grocery List</h1>
-
-        <h2>Filter Products</h2>
-        <div>
-            <input type="text" id="itemInput" placeholder="Enter an item...">
-            <button onclick="addTask()">Add</button>
-        </div>
-
-        <ul id="itemsList"></ul>
-    </div>
-
     <!-- POPULAR PRODUCTS SECTION -->
     <div class="container">
         <h1>Popular Products</h1>
@@ -139,6 +126,17 @@
         </div>
     </div>
 
+     <!-- FIND A PRODUCT SECTION -->
+     <div class="container">
+        <h2>Find A Product</h2>
+        <div>
+            <input type="text" id="itemInput" placeholder="Enter an item...">
+            <button onclick="addTask()">Search</button>
+        </div>
+
+        <ul id="itemsList"></ul>
+    </div>
+    
     <script>
         // ZIPCODE FORM SCRIPT
         document.getElementById("zipcodeForm").addEventListener("submit", function(event) {
