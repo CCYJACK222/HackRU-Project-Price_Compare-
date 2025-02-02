@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS stores (
     storeName TEXT NOT NULL,
     lat FLOAT NOT NULL,
     long FLOAT NOT NULL,
-    zipcode INTEGER NOT NULL
+    zipcode TEXT NOT NULL
 )
 """)
 
