@@ -50,7 +50,7 @@ def submit_selection():
     #cheepestPrice = filteredItems['price'].iat[0]
     #cheepestID = filteredItems['storeID'].iat[0]
     filteredStore = storeDF[storeDF['storeID'].isin(filteredItems['storeID'])]
-    #filteredStore = filteredStore[filteredStore['zipcode'] == zipcode]
+    filteredStore = filteredStore[filteredStore['zipcode'] == zipcode]
     print(f"filteredStore {filteredStore}")
     for _, row in filteredStore.iterrows():
 
