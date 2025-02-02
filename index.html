@@ -23,6 +23,7 @@
         }
 
         input,
+        select,
         button {
             width: 100%;
             padding: 8px;
@@ -103,7 +104,12 @@
     <div class="container">
         <h2>Enter Your Zipcode</h2>
         <form id="zipcodeForm">
-            <input type="text" id="zipcode" placeholder="Enter Zipcode" maxlength="5">
+            <label for="zipcode">Select Zipcode:</label>
+            <select id="zipcode">
+                <option value="8854">8854</option>
+                <option value="7102">7102</option>
+                <option value="8102">8102</option>
+            </select>
             <button type="submit">Submit</button>
         </form>
         <p id="message" class="message"></p>
@@ -158,13 +164,8 @@
             const zipcode = document.getElementById("zipcode").value;
             const messageElement = document.getElementById("message");
 
-            if (/^\d{5}$/.test(zipcode)) {
-                messageElement.textContent = `Zipcode ${zipcode} submitted successfully!`;
-                messageElement.style.color = "green";
-            } else {
-                messageElement.textContent = "Please enter a valid 5-digit zipcode.";
-                messageElement.style.color = "red";
-            }
+            messageElement.textContent = `Zipcode ${zipcode} submitted successfully!`;
+            messageElement.style.color = "green";
         });
 
         // ID SELECT SCRIPT
