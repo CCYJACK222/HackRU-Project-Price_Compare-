@@ -18,5 +18,6 @@ df['Longitude'] = df['Longitude'].str.extract('([0-9.-]+)')[0]
 # Drop the original 'Supermarket Coordinates' column
 df = df.drop(['Supermarket Coordinates'], axis=1)
 
-# Display the updated DataFrame
-print(df)
+# Save the updated DataFrame to a new CSV file
+df.to_csv('updated_rutgers_university_supermarkets.csv', index=False)
+
