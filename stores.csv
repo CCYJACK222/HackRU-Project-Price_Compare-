@@ -1,4 +1,4 @@
-ID,ZIP Code,Supermarket Name,lat,long
+storeID,zipcode,storeName,lat,long
 1,8854,ShopRite of East Brunswick,40.4071,74.4130
 2,8854,ACME Markets,40.4075,74.4135
 3,8854,Wegmans,40.5860,74.6160

@@ -19,9 +19,14 @@ def home():
 def submit_selection():
     # Connect to the database
     conn = sqlite3.connect("database.db")
+    itemLookingFor = request.form.get("product")
+    zipcode = request.form.get("zipcode")
+    print(f"product ID {itemLookingFor} | zipcode {zipcode}")
+    #product_name = PRODUCTS.get(product_id, "Unknown Product")
+
 
     # Write your SQL query (change 'users' to your table name)
-    storeQuery = "SELECT storeID, storeName, long, lat FROM stores"
+    storeQuery = "SELECT storeID, storeName, long, lat, zipcode FROM stores"
     itemQuery = "SELECT storeID, item, price FROM items"
 
     # Load data into a Pandas DataFrame
@@ -38,21 +43,29 @@ def submit_selection():
     """
     Filter DATABASES HERE 
     """
+    print(f"store DF {storeDF}")
+    print(f"item DF {itemDF}")
     filteredItems = itemDF[itemDF['item'] == itemLookingFor]
-    filteredItems = filteredItems.sort_values(by='price', ascending=True) #make it so smallest price 
-    cheepestPrice = filteredItems['price'].iat[0]
-    cheepestID = filteredItems['storeID'].iat[0]
-    filteredStore = storeDF[storeDF['storeID'] == cheepestID]
-
+    #filteredItems = filteredItems.sort_values(by='price', ascending=True) #make it so smallest price 
+    #cheepestPrice = filteredItems['price'].iat[0]
+    #cheepestID = filteredItems['storeID'].iat[0]
+    filteredStore = storeDF[storeDF['storeID'].isin(filteredItems['storeID'])]
+    #filteredStore = filteredStore[filteredStore['zipcode'] == zipcode]
+    print(f"filteredStore {filteredStore}")
     for _, row in filteredStore.iterrows():
 
         lat = row['lat']
         print(f"lat {lat}")
         lon = row['long']
+        lon *= -1
         print(f"lon {lon}")
         store_name = row['storeName']
-
-
+        store_id = row['storeID']
+        price = filteredItems.loc[filteredItems['storeID'] == store_id, 'price']
+        price = float(price)
+        print(float(price))
+        #price = result.values(0)
+        item = itemLookingFor
 
 
 
@@ -63,7 +76,7 @@ def submit_selection():
             fill=True,
             fill_color="cyan",
             fill_opacity=0.6,
-            popup=f"Store Name: {store_name} |\n {itemLookingFor} ${cheepestPrice}",
+            popup=f"Store Name: {store_name} |\n {itemLookingFor} ${price}",
         ).add_to(m)
 
     map_path = "templates/map.html"

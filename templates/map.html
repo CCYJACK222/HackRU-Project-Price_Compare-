@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e7c1b58a4acfa4d314566ae0dbe4e7f8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e7c1b58a4acfa4d314566ae0dbe4e7f8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e7c1b58a4acfa4d314566ae0dbe4e7f8 = L.map(
+                "map_e7c1b58a4acfa4d314566ae0dbe4e7f8",
+                {
+                    center: [40.497346, -74.440088],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_50ba1cc148e58b264355502decdc4c0e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_50ba1cc148e58b264355502decdc4c0e.addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+            var circle_marker_e1be0edc9460f130457577d19765ce84 = L.circleMarker(
+                [40.4071, -74.413],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_ff781ba204a76f7abaa84ef62bd51641 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea520b48c589d19ef6003da43b1ff70f = $(`<div id="html_ea520b48c589d19ef6003da43b1ff70f" style="width: 100.0%; height: 100.0%;">Store Name: ShopRite of East Brunswick |  Ground Beef $5.99</div>`)[0];
+                popup_ff781ba204a76f7abaa84ef62bd51641.setContent(html_ea520b48c589d19ef6003da43b1ff70f);
+            
+        
+
+        circle_marker_e1be0edc9460f130457577d19765ce84.bindPopup(popup_ff781ba204a76f7abaa84ef62bd51641)
+        ;
+
+        
+    
+    
+            var circle_marker_7a1ad8d31afff5a615650c4b0eb1ed44 = L.circleMarker(
+                [40.4075, -74.4135],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_a01275cb86387936973983fbf9b21809 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b220778fc4f8d9bb011b0ba4748e24b = $(`<div id="html_8b220778fc4f8d9bb011b0ba4748e24b" style="width: 100.0%; height: 100.0%;">Store Name: ACME Markets |  Ground Beef $6.49</div>`)[0];
+                popup_a01275cb86387936973983fbf9b21809.setContent(html_8b220778fc4f8d9bb011b0ba4748e24b);
+            
+        
+
+        circle_marker_7a1ad8d31afff5a615650c4b0eb1ed44.bindPopup(popup_a01275cb86387936973983fbf9b21809)
+        ;
+
+        
+    
+    
+            var circle_marker_02ec2c122c54aff7a159579c0ad09537 = L.circleMarker(
+                [40.586, -74.616],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_6a9d467ab5f2343d714ed273cfdb337c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4a29747812cd14c19d9458a232594ca = $(`<div id="html_c4a29747812cd14c19d9458a232594ca" style="width: 100.0%; height: 100.0%;">Store Name: Wegmans |  Ground Beef $6.99</div>`)[0];
+                popup_6a9d467ab5f2343d714ed273cfdb337c.setContent(html_c4a29747812cd14c19d9458a232594ca);
+            
+        
+
+        circle_marker_02ec2c122c54aff7a159579c0ad09537.bindPopup(popup_6a9d467ab5f2343d714ed273cfdb337c)
+        ;
+
+        
+    
+    
+            var circle_marker_f900a2c38d585049d321d1f353cfd030 = L.circleMarker(
+                [40.7282, -74.153],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_7f667d5c5702405f0ca6c02d526f434a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb235762314eb1345f6833160580c4f7 = $(`<div id="html_fb235762314eb1345f6833160580c4f7" style="width: 100.0%; height: 100.0%;">Store Name: ShopRite of Newark |  Ground Beef $5.89</div>`)[0];
+                popup_7f667d5c5702405f0ca6c02d526f434a.setContent(html_fb235762314eb1345f6833160580c4f7);
+            
+        
+
+        circle_marker_f900a2c38d585049d321d1f353cfd030.bindPopup(popup_7f667d5c5702405f0ca6c02d526f434a)
+        ;
+
+        
+    
+    
+            var circle_marker_bbd7908375e5126ca4c0674dc3fd15ad = L.circleMarker(
+                [40.735, -74.227],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_f54cd776bbb44817eea307f868ad5535 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0b97057e2ccab2b2ad40114d4418bb4 = $(`<div id="html_b0b97057e2ccab2b2ad40114d4418bb4" style="width: 100.0%; height: 100.0%;">Store Name: ALDI |  Ground Beef $5.49</div>`)[0];
+                popup_f54cd776bbb44817eea307f868ad5535.setContent(html_b0b97057e2ccab2b2ad40114d4418bb4);
+            
+        
+
+        circle_marker_bbd7908375e5126ca4c0674dc3fd15ad.bindPopup(popup_f54cd776bbb44817eea307f868ad5535)
+        ;
+
+        
+    
+    
+            var circle_marker_f359687b39c32c2de4bef91b189480a9 = L.circleMarker(
+                [40.735, -74.227],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_39e0f80a66aaec66d8e0fc9e9bc0b26f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c20ec23c6df8865a2af8a7d3e645a87 = $(`<div id="html_2c20ec23c6df8865a2af8a7d3e645a87" style="width: 100.0%; height: 100.0%;">Store Name: Key Food Supermarket |  Ground Beef $6.29</div>`)[0];
+                popup_39e0f80a66aaec66d8e0fc9e9bc0b26f.setContent(html_2c20ec23c6df8865a2af8a7d3e645a87);
+            
+        
+
+        circle_marker_f359687b39c32c2de4bef91b189480a9.bindPopup(popup_39e0f80a66aaec66d8e0fc9e9bc0b26f)
+        ;
+
+        
+    
+    
+            var circle_marker_3db7728a9337932e33c606dc6839817e = L.circleMarker(
+                [39.926, -75.119],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_552e1e0322a0f63f77b62ef46d80de37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4aa1e4ea0193286d63e7050ba6a09472 = $(`<div id="html_4aa1e4ea0193286d63e7050ba6a09472" style="width: 100.0%; height: 100.0%;">Store Name: ShopRite of Camden |  Ground Beef $5.79</div>`)[0];
+                popup_552e1e0322a0f63f77b62ef46d80de37.setContent(html_4aa1e4ea0193286d63e7050ba6a09472);
+            
+        
+
+        circle_marker_3db7728a9337932e33c606dc6839817e.bindPopup(popup_552e1e0322a0f63f77b62ef46d80de37)
+        ;
+
+        
+    
+    
+            var circle_marker_02b29d0738443c18dcfdedd63acf0c4e = L.circleMarker(
+                [39.926, -75.119],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_f41d9f0f8b463359a27ab558071cd9b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b42b91a78ed68200a930b63cf825db0c = $(`<div id="html_b42b91a78ed68200a930b63cf825db0c" style="width: 100.0%; height: 100.0%;">Store Name: ALDI |  Ground Beef $5.39</div>`)[0];
+                popup_f41d9f0f8b463359a27ab558071cd9b8.setContent(html_b42b91a78ed68200a930b63cf825db0c);
+            
+        
+
+        circle_marker_02b29d0738443c18dcfdedd63acf0c4e.bindPopup(popup_f41d9f0f8b463359a27ab558071cd9b8)
+        ;
+
+        
+    
+    
+            var circle_marker_3efbf0924ccd90eb140f7dcec0d2641d = L.circleMarker(
+                [39.926, -75.119],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_e7c1b58a4acfa4d314566ae0dbe4e7f8);
+        
+    
+        var popup_f412b74c4c6318b99459be7ada3128a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c866679d584f5494bbbbbecf6693191e = $(`<div id="html_c866679d584f5494bbbbbecf6693191e" style="width: 100.0%; height: 100.0%;">Store Name: Save-A-Lot |  Ground Beef $5.49</div>`)[0];
+                popup_f412b74c4c6318b99459be7ada3128a6.setContent(html_c866679d584f5494bbbbbecf6693191e);
+            
+        
+
+        circle_marker_3efbf0924ccd90eb140f7dcec0d2641d.bindPopup(popup_f412b74c4c6318b99459be7ada3128a6)
+        ;
+
+        
+    
+</script>
+</html>

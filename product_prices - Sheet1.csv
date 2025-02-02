@@ -1,4 +1,4 @@
-ID,Product,Store Name,Price
+storeID,item,Store Name,price
 1,Milk,ShopRite of East Brunswick,2.99
 2,Milk,ACME Markets,3.09
 3,Milk,Wegmans,3.29
