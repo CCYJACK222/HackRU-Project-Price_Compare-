@@ -101,50 +101,58 @@
 <body>
 
     <!-- ZIPCODE SECTION -->
-    <div class="container">
-        <h2>Enter Your Zipcode</h2>
-        <form id="zipcodeForm">
-            <label for="zipcode">Select Zipcode:</label>
-            <select id="zipcode">
-                <option value="8854">8854</option>
-                <option value="7102">7102</option>
-                <option value="8102">8102</option>
-            </select>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="message" class="message"></p>
-    </div>
-
-    <!-- POPULAR PRODUCTS SECTION -->
-    <div class="container">
-        <h1>Popular Products</h1>
+<div class="container">
+    <h2>Enter Your Zipcode</h2>
+    <form id="zipcodeForm" action="/submit-zipcode" method="POST">
+        <label for="zipcode">Select Zipcode:</label>
+        <select id="zipcode" name="zipcode" required>
+            <option value="8854">8854</option>
+            <option value="7102">7102</option>
+            <option value="8102">8102</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message" class="message"></p>
+</div>
+<!-- POPULAR PRODUCTS SECTION -->
+<div class="container">
+    <h1>Popular Products</h1>
+    <form action="/submit-product" method="POST">
         <div class="product-list">
-            <button class="product-item" onclick="viewProduct('milk', 1)">
+            <label class="product-item">
+                <input type="radio" name="product" value="1">
                 <img src="images/milk.webp" alt="Milk">
                 <div>Milk</div>
-            </button>
-            <button class="product-item" onclick="viewProduct('bananas', 2)">
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="2">
                 <img src="images/banana.avif" alt="Bananas">
                 <div>Bananas</div>
-            </button>
-            <button class="product-item" onclick="viewProduct('avocado', 3)">
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="3">
                 <img src="images/Avocado-fruits.webp" alt="Avocado">
                 <div>Avocado</div>
-            </button>
-            <button class="product-item" onclick="viewProduct('chicken breast', 4)">
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="4">
                 <img src="images/chicken breast.webp" alt="Chicken Breast">
                 <div>Chicken Breast</div>
-            </button>
-            <button class="product-item" onclick="viewProduct('ground beef', 5)">
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="5">
                 <img src="images/ground beef.jpeg" alt="Ground Beef">
                 <div>Ground Beef</div>
-            </button>
-            <button class="product-item" onclick="viewProduct('bread', 6)">
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="6">
                 <img src="images/bread.jpg" alt="Bread">
                 <div>Bread</div>
-            </button>
+            </label>
         </div>
-    </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
     <!-- FILTER SECTION -->
     <div class="container">
