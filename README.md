@@ -1,10 +1,10 @@
 # HackRU Project _ Price-Compare
 <h3>Instruction</h3>
-Please pip install the following 
-- sqlite3
-- pandas
-- folium
-- flask
+<p>Please pip install the following: 
+<br>- sqlite3
+<br>- pandas
+<br>- folium
+<br>- flask </p>
 
 
 run Run Me.py
