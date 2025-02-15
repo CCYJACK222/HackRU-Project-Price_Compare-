@@ -1,5 +1,5 @@
 # HackRU Project _ Price-Compare
-<h6>Instruction</h6>
+<h3>Instruction</h3>
 Please pip install the following 
 - sqlite3
 - pandas
